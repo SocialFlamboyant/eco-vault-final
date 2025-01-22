@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* Algemene stijlen */
+@font-face {
+  font-family: 'hanson'; 
+  src: url('fonts/Hanson-Bold.otf') format('opentype'); /* Zorg voor het juiste pad */
+  font-weight: bold; 
+  font-style: normal; 
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; 
+  width: 100%; 
+  background-color: #D4E0E0;
+  color: #333;
+}
+
+main {
+  margin: 0; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* Skip-link */
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+/* Navbar */
+.navbar {
+  background-image: url(images/wall.png);
+  background-size: cover;
+  border: 0.1em solid black;
+  padding: 0.7em 5%;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Navbar Logo */
+.navbar img.logo {
+  width: 3.2em;
+  height: 3em;
+  object-fit: fill;
+  margin-right:5em;
+  transition: transform 1s ease; 
+  transform-origin: center; 
+}
+
+/* Nav Tekst */
+.nav-tekst {
+  text-align: center;
+  flex-shrink: 0; 
+}
+
+/* Nav Tekst Title */
+.nav-tekst h1 {
+  font-family: 'Hanson', sans-serif;
+  font-size: calc(1.5vw + 1.5em);
+  font-weight: bolder;
+  color: #faa843;
+  margin: 0;
+  text-shadow: 
+    -1px -1px 3px rgba(0, 0, 0, 0.8),
+    1px -1px 3px rgba(0, 0, 0, 0.8),
+    -1px 1px 3px rgba(0, 0, 0, 0.8),
+    1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Nav Link */
+.nav-tekst a {
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Hover Effects for Nav Link */
+.nav-tekst a:hover {
+  background-color: #0056b3;
+  color: white;
+  padding: 0.1em 0.3em;
+  border-radius: 0.2em;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+/* Focus Effect */
+.nav-tekst a:focus {
+  outline: 2px dashed #0056b3;
+  background-color: #003f7f;
+  color: white;
+}
+
+/* animatie link */
+/* https://youtu.be/SgmNxE9lWcY?si=e7y022AWNUYatL8I */
+
+/* Spin Animatie */
+.navbar:hover img.logo {
+  animation: spin 5s infinite; 
+  animation-name: slideInRight;
+  animation-timing-function: ease-in;
+  animation-duration: 5s;
+  transform: translateX(4em) rotate(-720deg); 
+}
+
+/* media links */ 
+/* https://lamper-design.nl/uitleg/media-queries/ */
+/* https://www.w3schools.com/css/css3_mediaqueries.asp */
+
+/* Responsiviteit kleine schermen*/
+@media (max-width: 375px) {
+  .navbar {
+    padding: 0.7em 3%; 
+    justify-content: center; 
+  }
+
+  .navbar img.logo {
+    width: 2.3em;
+    height: 2.1em;
+    margin-right: 5em; 
+  }
+
+  .nav-tekst {
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  .nav-tekst h1 {
+    font-family: 'Hanson', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #faa843;
+    text-align: left;
+
+  }
+}
+
+/* Responsiviteit grote schermen*/
+@media (min-width: 376px) {
+    .navbar {
+      padding: 1.2em 3%; 
+    }
+  
+    .navbar img.logo {
+      width: 3.5em; 
+      height: 3.3em;
+      margin-right: 8em; 
+    }
+  
+    .nav-tekst h1 {
+      font-size: 2.5em; 
+      text-align: left; 
+    }
+  }
+  /* Inhoudelijke content */
+  .beginscherm {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    height: 100%; 
+  }
+
+  .vault {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+  }
+
+  .vault img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 0em;
+    object-fit: cover; 
+  }
+
+  .kopjes {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    position: relative; 
+  }
+
+  .eco-vault {
+    display: flex;
+    flex-direction: column;
+    align-items: start; 
+    padding-left: 2em; 
+  }
+
+  .content {
+    text-align: start;
+    padding-right: 10em; 
+  }
+
+  .afbeeldingen {
+    display: flex;
+    flex-direction: column;
+    align-items: start; 
+    padding-left: 2em; 
+  }
+
+  .afbeeldingen img {
+    width: 20em;
+    height: 10em;
+    object-fit: fill;
+    border: 0.2em solid #000000; 
+    border-radius: 0em;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+    margin-top: 1em; 
+    margin-bottom: 1em; 
+  }
+
+  .maps-iframe {
+    width: 20em; 
+    height: 10em; 
+    border: 0.2em solid #000000; 
+    border-radius: 0em; 
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Typografie */
+  h1 {
+    font-family: 'hanson', sans-serif; 
+    font-weight: bold; 
+    font-size: 2em;
+    margin-bottom: 0.3em;
+    color: #faa843;
+  }
+
+  h2 {
+    font-family: 'Hanson', sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: #faa843;
+    margin-bottom: 0.5em;
+    text-shadow: 
+    -1px -1px 3px rgba(0, 0, 0, 0.8),
+    1px -1px 3px rgba(0, 0, 0, 0.8),
+    -1px 1px 3px rgba(0, 0, 0, 0.8),
+    1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+
+  h3 {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 1.1em;
+    margin: 0 0 0.5em;
+    color: #333;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+
+  h4 {
+    font-family: 'hanson', sans-serif;
+    font-size: 1em;
+    margin: 0 0 0.5em;
+    color: #333;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+
+  p {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: rgb(51, 53, 52);
+    margin-bottom: 1em;
+    line-height: 1.6em;
+  }
+
+  li {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: rgb(51, 53, 52);
+    margin-bottom: 1em;
+    line-height: 1.6em;
+  }
+
+  /* Lijsten */
+  .informatie-list {
+    list-style: disc inside;
+    margin: 0;
+  }
