@@ -245,10 +245,6 @@ main {
     padding: 0;
     width: 100%;
     min-height: 100%;
-
-    background: linear-gradient(#001d37, rgba(1, 62, 112, 0.53));
-    color: white;
-    /*overflow: auto;*/
   }
 
 ```
