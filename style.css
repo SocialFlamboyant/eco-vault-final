@@ -221,7 +221,7 @@ main {
   .afbeeldingen img {
     width: 20em;
     height: 10em;
-    object-fit: fill;
+    object-fit: cover;
     border: 0.2em solid #000000; 
     border-radius: 0em;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
